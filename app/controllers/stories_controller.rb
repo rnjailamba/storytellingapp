@@ -7,14 +7,24 @@ class StoriesController < ApplicationController
 		@stories=Story.all
 	end
 
+	def new
+		@story = Story.new
+		
+	end
+
+	def create
+		@story = Story.new(params[:story])
+		
+	end
+
 	
 
 
 
 
-
-	def stories_params
-      params.require( :Story ).permit(:title, :body)
+	private
+	def story_params
+      params.require( :story )
     end
 
 end
