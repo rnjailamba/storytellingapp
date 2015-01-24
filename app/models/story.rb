@@ -1,3 +1,6 @@
 class Story < ActiveRecord::Base
-	attr_accessible :body,:title
+	include ActiveModel::Model
+  include ActiveModel::ForbiddenAttributesProtection
+
+  attr_accessible :title, :body
 end
